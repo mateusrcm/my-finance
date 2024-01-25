@@ -17,6 +17,7 @@ import {
   HomeOutline,
   BarChartOutline,
   TableOutline,
+  CoffeeOutline,
 } from '@ant-design/icons-angular/icons';
 
 registerLocaleData(en);
@@ -34,6 +35,7 @@ export const appConfig: ApplicationConfig = {
         HomeOutline,
         BarChartOutline,
         TableOutline,
+        CoffeeOutline,
       ])
     ),
     provideAnimations(),

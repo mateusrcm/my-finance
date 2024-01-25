@@ -1,21 +1,28 @@
 <nz-layout>
-  <nz-sider [nzTheme]="themeService.currentTheme" nzCollapsed>
+  <nz-sider [nzTheme]="currentTheme" nzCollapsed>
     <div class="floating-my-finance-icon">
-      B
+      <img
+        id="logo"
+        [src]="'../assets/IMG/' + currentTheme + '_logo.svg'"
+        alt="LOGO"
+      />
     </div>
 
     <section>
-      <ul nz-menu nzMode="inline" [nzTheme]="themeService.currentTheme">
-        <li nz-menu-item>
+      <ul nz-menu nzMode="inline" [nzTheme]="currentTheme">
+        <li nz-menu-item nzMatchRouter>
           <i nz-icon nzType="home"></i>
+          <a [routerLink]="['home']"></a>
         </li>
-
-        <li nz-menu-item>
+        
+        <li nz-menu-item nzMatchRouter>
           <i nz-icon nzType="bar-chart"></i>
+          <a [routerLink]="['analysis']"></a>
         </li>
-
-        <li nz-menu-item>
+        
+        <li nz-menu-item nzMatchRouter>
           <i nz-icon nzType="table"></i>
+          <a [routerLink]="['data']"></a>
         </li>
       </ul>
     </section>
@@ -23,11 +30,31 @@
 
   <nz-content>
     <div class="floating-action-menu">
-      <button nz-button nzType="text" nzShape="circle" (click)="changeTheme()">
-        <ng-container [ngSwitch]="themeService.currentTheme">
-          <i *ngSwitchCase="'light'" nz-icon nzType="bulb"></i>
-          <i *ngSwitchCase="'dark'" nz-icon nzType="bulb" nzTheme="fill"></i>
-        </ng-container>
+      <a
+        nz-button
+        nzType="text"
+        nzShape="circle"
+        href="https://www.buymeacoffee.com/mateusrcm"
+        target="_blank"
+      >
+        <i nz-icon nzType="coffee"></i>
+      </a>
+
+      <button
+        nz-button
+        nzType="text"
+        nzShape="circle"
+        [nz-tooltip]="
+          'Turn ' + currentTheme === 'dark' ? 'on' : 'off' + ' the lights'
+        "
+        (click)="changeTheme()"
+      >
+        <i
+          nz-icon
+          nzType="bulb"
+          [nzTheme]="currentTheme === 'dark' ? 'fill' : 'outline'"
+          nzTooltipPlacement="bottomRight"
+        ></i>
       </button>
     </div>
 
