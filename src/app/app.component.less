@@ -1,0 +1,44 @@
+@import "mixin";
+
+nz-layout {
+  min-height: 100vh;
+}
+
+.themeMixin({
+  :host {
+    nz-content {
+      background-color: @component-background;
+      padding: @padding-sm;
+    }
+    
+    nz-sider {
+      width: 50px !important;
+      min-width: 50px !important;
+      max-width: 50px !important;
+
+      section {
+        align-items: center;
+        overflow: visible;
+        display: grid;
+        height: 100%;
+
+        ul[nz-menu] {
+          background-color: @component-background;
+        }
+      }
+    }
+
+    .floating-action-menu {
+      position: absolute;
+      padding: @padding-md;
+      top: 0;
+      right: 0;
+    }
+
+    .floating-my-finance-icon {
+      padding: @padding-lg;
+      position: absolute;
+      top: 0;
+    }
+  }
+});
