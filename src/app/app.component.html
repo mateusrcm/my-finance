@@ -14,15 +14,20 @@
           <i nz-icon nzType="home"></i>
           <a [routerLink]="['home']"></a>
         </li>
-        
+
         <li nz-menu-item nzMatchRouter>
           <i nz-icon nzType="bar-chart"></i>
           <a [routerLink]="['analysis']"></a>
         </li>
-        
+
         <li nz-menu-item nzMatchRouter>
           <i nz-icon nzType="table"></i>
           <a [routerLink]="['data']"></a>
+        </li>
+
+        <li nz-menu-item nzMatchRouter>
+          <i nz-icon nzType="question-circle"></i>
+          <a [routerLink]="['help']"></a>
         </li>
       </ul>
     </section>
@@ -31,11 +36,12 @@
   <nz-content>
     <div class="floating-action-menu">
       <a
+        href="https://www.buymeacoffee.com/mateusrcm"
+        target="_blank"
         nz-button
         nzType="text"
         nzShape="circle"
-        href="https://www.buymeacoffee.com/mateusrcm"
-        target="_blank"
+        nz-tooltip="Buy me a coffee!"
       >
         <i nz-icon nzType="coffee"></i>
       </a>
@@ -45,15 +51,15 @@
         nzType="text"
         nzShape="circle"
         [nz-tooltip]="
-          'Turn ' + currentTheme === 'dark' ? 'on' : 'off' + ' the lights'
+          'Turn ' + (currentTheme === 'dark' ? 'on' : 'off') + ' the lights'
         "
+        nzTooltipPlacement="bottomRight"
         (click)="changeTheme()"
       >
         <i
           nz-icon
           nzType="bulb"
           [nzTheme]="currentTheme === 'dark' ? 'fill' : 'outline'"
-          nzTooltipPlacement="bottomRight"
         ></i>
       </button>
     </div>
