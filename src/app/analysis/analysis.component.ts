@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-analysis',
+  selector: 'mf-analysis',
   standalone: true,
   imports: [],
   templateUrl: './analysis.component.html',

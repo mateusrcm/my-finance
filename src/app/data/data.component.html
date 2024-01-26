@@ -1,1 +1,29 @@
-<p>data works!</p>
+<nz-tabset [nzTabBarExtraContent]="extraTemplate" nzSize="small">
+  <nz-tab nzTitle="All">
+    <mf-table></mf-table>
+  </nz-tab>
+
+  <nz-tab nzTitle="Debt">
+    <mf-table></mf-table>
+  </nz-tab>
+
+  <nz-tab nzTitle="Credit">
+    <mf-table></mf-table>
+  </nz-tab>
+</nz-tabset>
+
+<ng-template #extraTemplate>
+  <button
+    nz-button
+    nzType="text"
+    nzShape="circle"
+    (click)="isOpen = !isOpen"
+    nz-tooltip="Settings"
+  >
+    <i nz-icon nzType="setting"></i>
+  </button>
+</ng-template>
+
+<nz-modal [nzVisible]="isOpen" nzTitle="Settings">
+  <mf-settings></mf-settings>
+</nz-modal>

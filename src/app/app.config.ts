@@ -9,6 +9,7 @@ import en from '@angular/common/locales/en';
 
 import { routes } from './app.routes';
 
+import { NzConfig, provideNzConfig } from 'ng-zorro-antd/core/config';
 import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import {
@@ -20,11 +21,18 @@ import {
   CoffeeOutline,
 } from '@ant-design/icons-angular/icons';
 
+const globalConfig: NzConfig = {
+  table: {
+    nzSize: 'small',
+  },
+};
+
 registerLocaleData(en);
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
+    provideNzConfig(globalConfig),
     provideNzI18n(en_US),
     importProvidersFrom(FormsModule),
     importProvidersFrom(HttpClientModule),

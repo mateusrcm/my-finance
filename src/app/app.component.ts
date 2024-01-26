@@ -10,9 +10,10 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 
 import { ThemeService } from '../shared/services/theme.service';
 import { ThemeType } from '../shared/models/theme';
+import { NzConfigService } from 'ng-zorro-antd/core/config';
 
 @Component({
-  selector: 'app-root',
+  selector: 'mf-root',
   standalone: true,
   imports: [
     RouterOutlet,
