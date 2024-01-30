@@ -17,13 +17,38 @@
     nz-button
     nzType="text"
     nzShape="circle"
-    (click)="isOpen = !isOpen"
     nz-tooltip="Settings"
+    nzTooltipPlacement="bottomRight"
+    (click)="isOpen = !isOpen"
   >
     <i nz-icon nzType="setting"></i>
   </button>
 </ng-template>
 
-<nz-modal [nzVisible]="isOpen" nzTitle="Settings">
-  <mf-settings></mf-settings>
+<nz-modal
+  [nzVisible]="isOpen"
+  nzTitle="Settings"
+  nzWidth="60%"
+  (nzOnCancel)="cancel()"
+>
+  <ng-container *nzModalContent>
+    <mf-settings #mfSettings="mfSettings"></mf-settings>
+  </ng-container>
+
+  <ng-container *nzModalFooter>
+    <nz-space nzDirection="horizontal">
+      <button
+        *nzSpaceItem
+        nz-button
+        nzType="primary"
+        nzDanger
+        (click)="cancel()"
+      >
+        Cancel
+      </button>
+      <button *nzSpaceItem nz-button nzType="primary" (click)="saveSettings()">
+        Save
+      </button>
+    </nz-space>
+  </ng-container>
 </nz-modal>

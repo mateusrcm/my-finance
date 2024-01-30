@@ -1,0 +1,35 @@
+<form nz-form [formGroup]="columnForm">
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="title">Title</nz-form-label>
+    <nz-form-control>
+      <input nz-input id="title" type="text" formControlName="title" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="type">Type</nz-form-label>
+    <nz-form-control>
+      <nz-select id="type" formControlName="type">
+        <nz-option nzLabel="Text" nzValue="Text"></nz-option>
+        <nz-option nzLabel="Date" nzValue="Date"></nz-option>
+        <nz-option nzLabel="Number" nzValue="Number"></nz-option>
+        <nz-option nzLabel="Category" nzValue="Category"></nz-option>
+        <nz-option nzLabel="Boolean" nzValue="Boolean"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item *ngIf="type === 'Category'">
+    <nz-form-label nzRequired nzFor="values">Values</nz-form-label>
+    <nz-form-control>
+      <input
+        #valueInput
+        nz-input
+        (keydown.enter)="addValue(valueInput.value)"
+      />
+      <div *ngFor="let value of values">
+        {{ value }}
+      </div>
+    </nz-form-control>
+  </nz-form-item>
+</form>

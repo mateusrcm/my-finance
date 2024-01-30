@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @Component({
   selector: 'mf-data',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrl: './data.component.less',
 })
 export class DataComponent {
+  @ViewChild('mfSettings') mfSettings!: SettingsComponent;
+
   isOpen: boolean = false;
+
+  saveSettings(): void {
+    this.mfSettings.save();
+  }
+
+  cancel(): void {
+    this.mfSettings.clearChanges();
+    this.isOpen = false;
+  }
 }

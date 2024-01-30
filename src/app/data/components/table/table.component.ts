@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Column } from './table.type';
+
+import { ColumnService } from '../columns/column.service';
+import { Column } from '../columns/column.type';
 
 @Component({
   selector: 'mf-table',
@@ -7,27 +9,9 @@ import { Column } from './table.type';
   styleUrl: './table.component.less',
 })
 export class TableComponent {
-  selectedColumns: Column[] = [
-    {
-      GUID: '1',
-      title: 'Name',
-      prop: 'title',
-      type: 'Text',
-      isCustom: false,
-    },
-    {
-      GUID: '2',
-      title: 'Description',
-      prop: 'description',
-      type: 'Text',
-      isCustom: false,
-    },
-    {
-      GUID: '3',
-      title: 'Value',
-      prop: 'value',
-      type: 'Number',
-      isCustom: false,
-    },
-  ];
+  get selectedColumns(): Column[] {
+    return this.columnService.selectedColumns;
+  }
+
+  constructor(private columnService: ColumnService) {}
 }

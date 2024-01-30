@@ -11,6 +11,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ThemeService } from '../shared/services/theme.service';
 import { ThemeType } from '../shared/models/theme';
 import { NzConfigService } from 'ng-zorro-antd/core/config';
+import { ColumnService } from './data/components/columns/column.service';
 
 @Component({
   selector: 'mf-root',
@@ -33,7 +34,10 @@ export class AppComponent implements OnInit {
     return this.themeService.currentTheme;
   }
 
-  constructor(public themeService: ThemeService) {}
+  constructor(
+    private themeService: ThemeService,
+    private columnService: ColumnService
+  ) {}
 
   ngOnInit(): void {
     this.themeService.loadTheme(true);
@@ -44,5 +48,20 @@ export class AppComponent implements OnInit {
       this.themeService.currentTheme === 'dark' ? 'light' : 'dark';
 
     this.themeService.changeTheme(theme);
+  }
+
+  downloadData(): void {
+    //TODO: add download logic
+    const columnsConfig = this.columnService.exportConfig();
+
+    const config = {
+      ...columnsConfig,
+    };
+
+    console.log(config);
+  }
+
+  uploadData(): void {
+    //TODO: add upload logic
   }
 }

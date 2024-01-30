@@ -19,6 +19,8 @@ import {
   BarChartOutline,
   TableOutline,
   CoffeeOutline,
+  DownloadOutline,
+  UploadOutline,
 } from '@ant-design/icons-angular/icons';
 
 const globalConfig: NzConfig = {
@@ -44,6 +46,8 @@ export const appConfig: ApplicationConfig = {
         BarChartOutline,
         TableOutline,
         CoffeeOutline,
+        DownloadOutline,
+        UploadOutline,
       ])
     ),
     provideAnimations(),
