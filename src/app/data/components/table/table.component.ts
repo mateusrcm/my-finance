@@ -10,7 +10,7 @@ import { Column } from '../columns/column.type';
 })
 export class TableComponent {
   get selectedColumns(): Column[] {
-    return this.columnService.selectedColumns;
+    return this.columnService.selectedColumns();
   }
 
   constructor(private columnService: ColumnService) {}

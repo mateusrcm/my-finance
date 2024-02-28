@@ -67,13 +67,16 @@ export class NewColumnComponent implements OnInit, OnDestroy {
   }
 
   addValue(value: string): void {
-    if (!value) return;
+    if (!value) {
+      this.nzMessage.error('Oops, Empty field!');
+      return;
+    }
 
     const valuesControl = this.columnForm.controls.values;
     const values = valuesControl.getRawValue();
 
     if (values?.includes(value)) {
-      this.nzMessage.error('Value already exists');
+      this.nzMessage.error('Oops, Value already exists!');
       return;
     }
 

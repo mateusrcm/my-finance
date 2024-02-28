@@ -44,5 +44,5 @@ export interface ColumnForm {
 
 export interface ColumnsConfiguration {
   columns: Column[];
-  selectedColumns: Column[];
+  selectedColumnsGUID: string[];
 }
