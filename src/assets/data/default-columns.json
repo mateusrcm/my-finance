@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "title": "Title",
+    "type": "Text",
+    "values": null,
+    "GUID": "39a2c469-46d5-450e-a1f1-c6db54ee049e",
+    "prop": "title",
+    "isMandatory": true,
+    "isCustom": false
+  },
+  {
+    "title": "Description",
+    "type": "Text",
+    "values": null,
+    "GUID": "c83f3a6b-5a2e-4041-b59b-593e4e13f1af",
+    "prop": "description",
+    "isCustom": false
+  },
+  {
+    "title": "Value",
+    "type": "Number",
+    "values": null,
+    "GUID": "604ab347-a2d0-4065-aee1-2dbac5a2cb59",
+    "prop": "value",
+    "isMandatory": true,
+    "isCustom": false
+  },
+  {
+    "title": "Date",
+    "type": "Date",
+    "values": null,
+    "GUID": "3bcc9f5f-31ba-4851-a8d1-4285e9e46c66",
+    "prop": "date",
+    "isMandatory": true,
+    "isCustom": false
+  },
+  {
+    "title": "Category",
+    "type": "Category",
+    "values": [
+      "Food",
+      "Transportation",
+      "Housing",
+      "Leisure",
+      "Investment",
+      "Clothing"
+    ],
+    "GUID": "f17c4dd1-eaf3-4dcf-ae03-e0a064615c26",
+    "prop": "category",
+    "isMandatory": true,
+    "isCustom": false
+  },
+  {
+    "title": "Type",
+    "type": "Strict Category",
+    "values": ["Debt", "Credit"],
+    "GUID": "0f7f1043-9271-4ef3-9301-01ad2257f480",
+    "prop": "type",
+    "isMandatory": true,
+    "isCustom": true
+  }
+]

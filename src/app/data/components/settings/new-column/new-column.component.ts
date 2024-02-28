@@ -29,6 +29,7 @@ export class NewColumnComponent implements OnInit, OnDestroy {
   columnForm: FormGroup<ColumnForm> = this.fb.group({
     title: ['', [Validators.required]],
     type: ['Text' as ColumnType, [Validators.required]],
+    isMandatory: [false, [Validators.required]],
     values: new FormControl<null | string[]>(null, { nonNullable: false }),
   });
 
@@ -73,7 +74,7 @@ export class NewColumnComponent implements OnInit, OnDestroy {
 
     if (values?.includes(value)) {
       this.nzMessage.error('Value already exists');
-      return 
+      return;
     }
 
     values?.push(value);

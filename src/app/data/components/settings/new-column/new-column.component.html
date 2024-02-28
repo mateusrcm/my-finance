@@ -2,7 +2,13 @@
   <nz-form-item>
     <nz-form-label nzRequired nzFor="title">Title</nz-form-label>
     <nz-form-control>
-      <input nz-input id="title" type="text" formControlName="title" />
+      <input
+        nz-input
+        id="title"
+        type="text"
+        formControlName="title"
+        (keyup.enter)="save()"
+      />
     </nz-form-control>
   </nz-form-item>
 
@@ -22,14 +28,16 @@
   <nz-form-item *ngIf="type === 'Category'">
     <nz-form-label nzRequired nzFor="values">Values</nz-form-label>
     <nz-form-control>
-      <input
-        #valueInput
-        nz-input
-        (keydown.enter)="addValue(valueInput.value)"
-      />
+      <input #valueInput nz-input (keyup.enter)="addValue(valueInput.value)" />
       <div *ngFor="let value of values">
         {{ value }}
       </div>
     </nz-form-control>
   </nz-form-item>
+
+  <nz-row nzJustify="end" nzGutter="0">
+    <label nz-checkbox formControlName="isMandatory">
+      <span>Mandatory</span>
+    </label>
+  </nz-row>
 </form>
