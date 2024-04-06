@@ -1,14 +1,14 @@
 <nz-tabset [nzTabBarExtraContent]="extraTemplate" nzSize="small">
   <nz-tab nzTitle="All">
-    <mf-table></mf-table>
+    <mf-table [type]="'all'"></mf-table>
   </nz-tab>
 
   <nz-tab nzTitle="Debt">
-    <mf-table></mf-table>
+    <mf-table [type]="'debt'"></mf-table>
   </nz-tab>
 
   <nz-tab nzTitle="Credit">
-    <mf-table></mf-table>
+    <mf-table [type]="'credit'"></mf-table>
   </nz-tab>
 </nz-tabset>
 

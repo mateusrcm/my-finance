@@ -11,10 +11,10 @@ import { Subject, takeUntil } from 'rxjs';
 
 import { NzMessageService } from 'ng-zorro-antd/message';
 
-import { ColumnService } from '../../columns/column.service';
+import { ColumnService } from '../../../services/columns/column.service';
 
 import { convertToProp } from '../../table/table';
-import { Column, ColumnForm, ColumnType } from '../../columns/column.type';
+import { Column, ColumnForm, ColumnType } from '../../../services/columns/column.type';
 
 @Component({
   selector: 'mf-new-column',

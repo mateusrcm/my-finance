@@ -1,17 +1,47 @@
-<nz-table>
+<nz-table #dataTable [nzData]="data()">
   <thead>
     <tr>
-      <th *ngFor="let column of selectedColumns">
+      @for (column of selectedColumns; track column.prop) {
+      <th>
         {{ column.title }}
       </th>
+      }
     </tr>
   </thead>
 
   <tbody>
-    <tr></tr>
+    @for (row of dataTable.data; track $index) {
+    <tr>
+      @for (column of selectedColumns; track column.prop) {
+      <td>
+        {{ row[column.prop] }}
+      </td>
+      }
+    </tr>
+    }
   </tbody>
 
   <tfoot>
-    <tr></tr>
+    <tr>
+      @for (column of selectedColumns; track column.prop) {
+      <ng-container>
+        @if (column.type === 'Number') {
+        <ng-container>
+          @if (column.title === "Value") {
+          <td>
+            {{ data() | total : column.prop | currency : 'BRL' }}
+          </td>
+          } @else {
+          <td>
+            {{ data() | total : column.prop }}
+          </td>
+          }
+        </ng-container>
+        } @else {
+        <td></td>
+        }
+      </ng-container>
+      }
+    </tr>
   </tfoot>
 </nz-table>

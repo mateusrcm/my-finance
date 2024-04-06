@@ -15,6 +15,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { DataComponent } from './data.component';
 import { TableComponent } from './components/table/table.component';
 import { SettingsModule } from './components/settings/settings.module';
+import { TotalPipe } from './pipes/total.pipe';
 
 export const routes: Routes = [
   {
@@ -37,7 +38,7 @@ export const routes: Routes = [
     SettingsModule,
   ],
   providers: [],
-  declarations: [TableComponent, DataComponent],
+  declarations: [TableComponent, DataComponent, TotalPipe],
   exports: [],
 })
 export class DataModule {}

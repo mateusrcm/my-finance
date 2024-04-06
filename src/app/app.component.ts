@@ -11,7 +11,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ThemeService } from '../shared/services/theme.service';
 import { ThemeType } from '../shared/models/theme';
 import { NzConfigService } from 'ng-zorro-antd/core/config';
-import { ColumnService } from './data/components/columns/column.service';
+import { ColumnService } from './data/services/columns/column.service';
 
 @Component({
   selector: 'mf-root',
