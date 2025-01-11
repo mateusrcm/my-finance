@@ -7,13 +7,14 @@ import { FormControl } from '@angular/forms';
  * could be using some kind of DataTable in RUST (wasm) otherwise could
  * be something like Reverse Polish Notation
  */
-export type ColumnType =
-  | 'Text'
-  | 'Date'
-  | 'Number'
-  | 'Boolean'
-  | 'Category'
-  | 'Strict Category';
+export enum ColumnType {
+  TEXT,
+  DATE,
+  NUMBER,
+  BOOLEAN,
+  CATEGORY,
+  STRICT_CATEGORY,
+}
 
 export interface Column {
   GUID: string;

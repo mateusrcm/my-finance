@@ -25,7 +25,7 @@
     <tr>
       @for (column of selectedColumns; track column.prop) {
       <ng-container>
-        @if (column.type === 'Number') {
+        @if (column.type === ColumnType.NUMBER) {
         <ng-container>
           @if (column.title === "Value") {
           <td>

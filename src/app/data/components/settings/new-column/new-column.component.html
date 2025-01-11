@@ -2,13 +2,7 @@
   <nz-form-item>
     <nz-form-label nzRequired nzFor="title">Title</nz-form-label>
     <nz-form-control>
-      <input
-        nz-input
-        id="title"
-        type="text"
-        formControlName="title"
-        (keyup.enter)="save()"
-      />
+      <input nz-input id="title" type="text" formControlName="title" (keyup.enter)="save()" />
     </nz-form-control>
   </nz-form-item>
 
@@ -25,7 +19,7 @@
     </nz-form-control>
   </nz-form-item>
 
-  <nz-form-item *ngIf="type === 'Category'">
+  <nz-form-item *ngIf="type === ColumnType.CATEGORY">
     <nz-form-label nzRequired nzFor="values">Values</nz-form-label>
     <nz-form-control>
       <input #valueInput nz-input (keyup.enter)="addValue(valueInput.value)" />
