@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { DataRow } from '../services/data/data.type';
 
 @Pipe({
-  name: 'total',
+    name: 'total',
+    standalone: false
 })
 export class TotalPipe implements PipeTransform {
   transform(data: DataRow[], prop: keyof DataRow): number {

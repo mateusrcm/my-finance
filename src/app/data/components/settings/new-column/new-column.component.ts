@@ -17,10 +17,11 @@ import { convertToProp } from '../../table/table';
 import { Column, ColumnForm, ColumnType } from '../../../services/columns/column.type';
 
 @Component({
-  selector: 'mf-new-column',
-  exportAs: 'mfNewColumn',
-  templateUrl: './new-column.component.html',
-  styleUrl: './new-column.component.less',
+    selector: 'mf-new-column',
+    exportAs: 'mfNewColumn',
+    templateUrl: './new-column.component.html',
+    styleUrl: './new-column.component.less',
+    standalone: false
 })
 export class NewColumnComponent implements OnInit, OnDestroy {
   hasPendingChanges: boolean = false;

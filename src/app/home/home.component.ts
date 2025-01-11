@@ -6,10 +6,9 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
-  selector: 'mf-home',
-  standalone: true,
-  imports: [CommonModule, RouterModule, NzTypographyModule, NzButtonModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.less',
+    selector: 'mf-home',
+    imports: [CommonModule, RouterModule, NzTypographyModule, NzButtonModule],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.less'
 })
 export class HomeComponent {}

@@ -14,20 +14,19 @@ import { NzConfigService } from 'ng-zorro-antd/core/config';
 import { ColumnService } from './data/services/columns/column.service';
 
 @Component({
-  selector: 'mf-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    RouterModule,
-    CommonModule,
-    NzToolTipModule,
-    NzLayoutModule,
-    NzButtonModule,
-    NzMenuModule,
-    NzIconModule,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.less',
+    selector: 'mf-root',
+    imports: [
+        RouterOutlet,
+        RouterModule,
+        CommonModule,
+        NzToolTipModule,
+        NzLayoutModule,
+        NzButtonModule,
+        NzMenuModule,
+        NzIconModule,
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.less'
 })
 export class AppComponent implements OnInit {
   get currentTheme(): ThemeType {

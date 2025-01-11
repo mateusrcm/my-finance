@@ -3,10 +3,11 @@ import { NewColumnComponent } from './new-column/new-column.component';
 import { ColumnsComponent } from './columns/columns.component';
 
 @Component({
-  selector: 'mf-settings',
-  exportAs: 'mfSettings',
-  templateUrl: './settings.component.html',
-  styleUrl: './settings.component.less',
+    selector: 'mf-settings',
+    exportAs: 'mfSettings',
+    templateUrl: './settings.component.html',
+    styleUrl: './settings.component.less',
+    standalone: false
 })
 export class SettingsComponent {
   @ViewChild('mfNewColumn') mfNewColumn!: NewColumnComponent;

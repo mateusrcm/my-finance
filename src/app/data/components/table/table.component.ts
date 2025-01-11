@@ -7,9 +7,10 @@ import { ColumnService } from '../../services/columns/column.service';
 import { DataService } from '../../services/data/data.service';
 
 @Component({
-  selector: 'mf-table',
-  templateUrl: './table.component.html',
-  styleUrl: './table.component.less',
+    selector: 'mf-table',
+    templateUrl: './table.component.html',
+    styleUrl: './table.component.less',
+    standalone: false
 })
 export class TableComponent {
   type = input.required<CustomType>();
